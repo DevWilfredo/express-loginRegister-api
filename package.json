@@ -1,0 +1,22 @@
+{
+  "name": "users-express-api",
+  "version": "1.0.0",
+  "description": "Express users API",
+  "license": "ISC",
+  "author": "DevWilfredo <wilfredopintomata@gmail.com>",
+  "type": "commonjs",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "dependencies": {
+    "@prisma/client": "^6.6.0",
+    "bcrypt": "^5.1.1",
+    "bcryptjs": "^3.0.2",
+    "dotenv": "^16.5.0",
+    "express": "^5.1.0",
+    "jsonwebtoken": "^9.0.2",
+    "morgan": "^1.10.0",
+    "prisma": "^6.6.0"
+  }
+}
