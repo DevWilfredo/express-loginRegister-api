@@ -6,16 +6,16 @@ Este es un proyecto backend desarrollado con **Node.js** y **Express**, que empl
 
 ## 📚 Índice
 
-1. 🧰 [Requisitos](#requisitos)  
-2. 🚀 [Instalación](#instalación)  
-3. 🛠️ [Tecnologías](#tecnologías)  
-4. 🗂️ [Estructura de Carpetas](#estructura-de-carpetas)  
-5. 📡 [Uso de la API](#uso-de-la-api)  
-6. 📬 [Endpoints Disponibles](#endpoints-disponibles)  
-7. 📖 [Código de Conducta](#código-de-conducta)  
-8. ✅ [Actualizaciones Pendientes](#actualizaciones-pendientes)  
-9. 👨‍💻 [Autor](#autor)  
-10. 🪪 [Licencia](#licencia)  
+1. 🧰 [Requisitos](#Requisitos)  
+2. 🚀 [Instalación](#Instalación)  
+3. 🛠️ [Tecnologías](#Tecnologías)  
+4. 🗂️ [Estructura de Carpetas](#Estructura-de-Carpetas)  
+5. 📡 [Uso de la API](#Uso-de-la-API)  
+6. 📬 [Endpoints Disponibles](#Endpoints-Disponibles)  
+7. 📖 [Código de Conducta](#Código-de-Conducta)  
+8. ✅ [Actualizaciones Pendientes](#Actualizaciones-Pendientes)  
+9. 👨‍💻 [Autor](#Autor)  
+10. 🪪 [Licencia](#Licencia)  
 
 ---
 
