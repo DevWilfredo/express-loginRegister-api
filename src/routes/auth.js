@@ -1,27 +1,49 @@
-// 📦 Importamos el módulo Router de Express para definir las rutas
+// 📦 Importamos el módulo Router de Express para definir rutas de manera modular
 const { Router } = require('express');
 
-// Importamos los métodos del controlador de autenticación
+// 📦 Importamos el esquema de validación de usuarios con Joi
+const { userSchema } = require('../validators/userValidator');
+
+// 📦 Middleware personalizado para aplicar validaciones
+const validate = require('../middlewares/validate');
+
+// 📦 Controladores que manejan la lógica de autenticación
 const { register, login, protectedRoute } = require('../controllers/authController');
 
-// Importamos el middleware que verifica el token JWT
+// 📦 Middleware que verifica la validez del token JWT para proteger rutas
 const authenticateToken = require('../middlewares/auth');
 
-// Inicializamos un enrutador de Express
+// 🚀 Inicializamos una nueva instancia del enrutador de Express
 const router = Router();
 
-// Definición de la ruta POST /register para registrar un nuevo usuario
-// Llama al controlador 'register' para crear un usuario
-router.post('/register', register);
+/**
+ * @route   POST /register
+ * @desc    Registro de nuevos usuarios
+ * @access  Público
+ * 
+ * Valida el cuerpo del request usando Joi y, si es válido,
+ * llama al controlador para registrar al usuario.
+ */
+router.post('/register', validate(userSchema), register);
 
-// Definición de la ruta POST /login para autenticar a un usuario
-// Llama al controlador 'login' para verificar las credenciales y generar un token
+/**
+ * @route   POST /login
+ * @desc    Autenticación de usuarios existentes
+ * @access  Público
+ * 
+ * Verifica las credenciales y genera un token JWT si son válidas.
+ */
 router.post('/login', login);
 
-// Definición de la ruta GET /protected-route para acceder a una ruta protegida
-// Llama al middleware 'authenticateToken' para verificar el token JWT
-// Si el token es válido, permite el acceso a la ruta protegida
+/**
+ * @route   GET /protected-route
+ * @desc    Ruta de prueba protegida con JWT
+ * @access  Privado
+ * 
+ * Usa el middleware `authenticateToken` para validar el token JWT.
+ * Si el token es válido, permite el acceso a la función `protectedRoute`.
+ */
 router.get('/protected-route', authenticateToken, protectedRoute);
 
-// Exportamos el enrutador para que pueda ser utilizado en el archivo principal de rutas
+// 🚀 Exportamos el enrutador para que pueda ser utilizado en el archivo principal
 module.exports = router;
